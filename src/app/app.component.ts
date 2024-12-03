@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-//import { environment } from '../environments/environnement';
-import { environment } from '../environments/environnement.mock';
+import { environment } from '../environments/environment';
+
 
 @Component({
   selector: 'app-root',
