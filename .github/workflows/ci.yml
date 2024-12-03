@@ -39,6 +39,11 @@ jobs:
       # Linter
       - name: Lint
         run: npm run lint
+      
+      # création dossier
+      - name: Ensure environments directory exists
+        run: mkdir -p src/environments
+
       # Générer le fichier environment.mock.ts
       - name: Generate environment.ts
         run: |
