@@ -11,7 +11,8 @@ import { environment } from '../environments/environment';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  readonly isStaging = !( environment as any).production ;
+  isProductionEnvironment = environment.production ;
+  firebaseProjectId = environment.firebaseConfig.projectId ;
   title = 'Hello, awesome-app';
+
 }
