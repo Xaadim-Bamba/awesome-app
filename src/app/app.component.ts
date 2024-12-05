@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { environment } from '../environments/environment';
 
 
 @Component({
@@ -11,8 +10,5 @@ import { environment } from '../environments/environment';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  isProductionEnvironment = environment.production ;
-  firebaseProjectId = environment.firebaseConfig.projectId ;
-  title = 'Hello, awesome-app';
-
+  title = 'Hello, awesome-app'
 }
