@@ -1,5 +1,10 @@
 {
   "projects": {
-    "default": "awesome-app-staging"
-  }
+    "default": "awesome-app-dev-866a9",
+    "dev": "awesome-app-dev-866a9",
+    "staging": "awesome-app-staging",
+    "production": "awesome-app-prod-3aa1d"
+  },
+  "targets": {},
+  "etags": {}
 }
