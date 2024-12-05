@@ -62,6 +62,17 @@
                   "with": "src/environments/environment.staging.ts"
                 }
               ]
+            },
+            "dev": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -74,9 +85,12 @@
             },
             "staging": {
               "buildTarget": "awesome-app:build:staging"
+            },
+            "dev": {
+              "buildTarget": "awesome-app:build:dev"
             }
           },
-          "defaultConfiguration": "staging"
+          "defaultConfiguration": "dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"

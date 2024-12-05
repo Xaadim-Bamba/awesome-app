@@ -47,7 +47,17 @@ jobs:
       # Générer le fichier environment.mock.ts
       - name: Generate environment.ts
         run: |
-          echo "export const environment = { production: false, apiUrl: 'http://mock-api.example.com' };" > src/environments/environment.ts
+          echo "export const environment = { 
+          production: false, 
+          firebaseConfig: {
+            projectId: 'mock-project-id',
+            apiKey: 'mock-api-key',
+            authDomain: 'mock-auth-domain',
+            storageBucket: 'mock-storage-bucket',
+            messagingSenderId: 'mock-sender-id',
+            appId: 'mock-app-id'
+            }
+          };" > src/environments/environment.ts
 
       # Tests
       - name: Test
