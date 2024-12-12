@@ -39,29 +39,18 @@ jobs:
       # Linter
       - name: Lint
         run: npm run lint
-      
-      # création dossier
-      - name: Ensure environments directory exists
-        run: mkdir -p src/environments
-
-      # Générer le fichier environment.mock.ts
-      - name: Generate environment.ts
-        run: |
-          echo "export const environment = { 
-          production: false, 
-          firebaseConfig: {
-            projectId: 'mock-project-id',
-            apiKey: 'mock-api-key',
-            authDomain: 'mock-auth-domain',
-            storageBucket: 'mock-storage-bucket',
-            messagingSenderId: 'mock-sender-id',
-            appId: 'mock-app-id'
-            }
-          };" > src/environments/environment.ts
 
       # Tests
       - name: Test
         run: npm run test:ci
+
+      # Set environments variables 
+      - name: Create environment file 
+        run: |
+          mkdir environments
+          echo "Creating production environment file..."
+          echo -n "export const firebaseConfiig = " > environments/environments.ts
+          echo "${{secrets.FIREBASE_CONFIG}}" >> environments/environments.ts
 
       # Build
       - name: Build
