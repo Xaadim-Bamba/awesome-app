@@ -40,18 +40,18 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      # Tests
+      - name: Test
+        run: npm run test:ci
+
       # Set environments variables 
       - name: Create environment file 
         run: |
           mkdir environments
           echo "Creating production environment file..."
-          echo -n "export const firebaseConfiig = " > environments/environments.ts
-          echo "${{secrets.FIREBASE_CONFIG}}" >> environments/environments.ts
+          echo -n "export const firebaseConfiig = " > environments/environment.ts
+          echo "${{secrets.FIREBASE_CONFIG}}" >> environments/environment.ts
 
-      # Tests
-      - name: Test
-        run: npm run test:ci
-    
       # Build
       - name: Build
         run: npm run build
